@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mixue Selalu di Hati</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(images/hbd.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: sans-serif;
+        }
+
+        .flex-container {
+            display: flex;
+            /* background-color: DodgerBlue; */
+            text-align: center;
+            /* align-items: center; */
+            font-weight: bold;
+            margin-top: 165px;
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            background-color: transparent;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            /* flex: 2; */
+            position: relative;
+            width: 100px;
+            height: 100px;
+            /* opacity: 0.8; */
+        }
+
+        img {
+            width: 10%;
+        }
+
+        img.pp {
+            width: 50%;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            /* margin-top: 140px; */
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">
+        <b>
+            Happy Birthday<br>Adelia Rafika Putri
+        </b>
+    </h1>
+    <br>
+    <center>
+        <img class="pp" src="images/pp2-modified.png" alt="">
+    </center>
+
+    <div class="accordion" id="accordionExample">
+        <div class="flex-container">
+            <div class="bebek">
+                <!-- <img src="images/present.png" alt=""> -->
+            </div>
+            <div class="kambing">
+                <!-- <img src="images/present.png" alt=""> -->
+            </div>
+            <div class="sapi">
+                <!-- <img src="images/present.png" alt=""> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        </script>
+    <script src="js/jquery.js"></script>
+    <script>
+
+        $("document").ready(function () {
+            var currentAudio = null;
+
+            // bebek
+            $("div.bebek").click(function () {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+
+                $(this).css({
+                    background: "url('images/pp1-modified.png')",
+                    'background-position': 'center',
+                    'background-size': 'cover',
+                    'background-repeat': 'no-repeat',
+                    'background-position-y': '-5px',
+
+                });
+
+                currentAudio = $("<audio></audio>")
+                    .on("ended", function () {
+                        $(this).remove();
+                        currentAudio = null;
+                    })
+                    .attr({
+                        src: "audio/piano.mp3",
+                        volume: 0.5,
+                        autoplay: "autoplay",
+                    })
+                    .appendTo("body")[0];
+            });
+
+            // kambing
+            $("div.kambing").click(function () {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+
+                $(this).css({
+                    background: "url('images/pp3-modified.png')",
+                    'background-position': 'center',
+                    'background-size': 'cover',
+                    'background-repeat': 'no-repeat',
+                    'background-position-y': '-5px',
+                });
+
+                currentAudio = $("<audio></audio>")
+                    .on("ended", function () {
+                        $(this).remove();
+                        currentAudio = null;
+                    })
+                    .attr({
+                        src: "audio/ultah.mp3",
+                        volume: 0.5,
+                        autoplay: "autoplay",
+                    })
+                    .appendTo("body")[0];
+            });
+
+            // sapi
+            $("div.sapi").click(function () {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+
+                $(this).css({
+                    background: "url('images/pp4-modified.png')",
+                    'background-position': 'center',
+                    'background-size': 'cover',
+                    'background-repeat': 'no-repeat',
+                    'background-position-y': '-5px',
+                });
+
+                currentAudio = $("<audio></audio>")
+                    .on("ended", function () {
+                        $(this).remove();
+                        currentAudio = null;
+                    })
+                    .attr({
+                        src: "audio/song.mp3",
+                        volume: 0.5,
+                        autoplay: "autoplay",
+                    })
+                    .appendTo("body")[0];
+            });
+        });
+    </script>
+
+</body>
+
+</html>
